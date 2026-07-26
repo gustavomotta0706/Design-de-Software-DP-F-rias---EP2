@@ -78,3 +78,12 @@ def sorteia_questao(questoes, nivel):
     indice = random.randint(0, len(lista) - 1)
     
     return lista[indice]
+
+# 2.5
+def sorteia_questao_inedita(dicionario, nivel, lista):
+    questao = sorteia_questao(dicionario, nivel)
+
+    while questao in lista:
+        questao = sorteia_questao(dicionario, nivel)
+
+    return questao
