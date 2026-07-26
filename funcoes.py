@@ -60,4 +60,14 @@ def valida_questao(questao):
 
     return erros
 
-
+# 2.3
+def valida_questoes(questoes):
+    lista_erros = []
+    for item in questoes:
+        erro = valida_questao(item)
+        lista_erros.append(erro)
+    
+    if len(lista_erros) == 0:
+        return {}
+    else:
+        return lista_erros
