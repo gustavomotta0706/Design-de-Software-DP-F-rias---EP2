@@ -87,3 +87,15 @@ def sorteia_questao_inedita(dicionario, nivel, lista):
         questao = sorteia_questao(dicionario, nivel)
 
     return questao
+
+# 2.6
+def questao_para_texto(questao, id):
+    texto = "----------------------------------------\n"
+    texto += f"QUESTAO {id}\n\n"
+    texto += f"{questao['titulo']}\n\n"
+    texto += "RESPOSTAS:\n"
+    texto += f"A: {questao['opcoes']['A']}\n"
+    texto += f"B: {questao['opcoes']['B']}\n"
+    texto += f"C: {questao['opcoes']['C']}\n"
+    texto += f"D: {questao['opcoes']['D']}"
+    return texto
