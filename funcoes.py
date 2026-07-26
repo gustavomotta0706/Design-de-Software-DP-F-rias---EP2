@@ -99,3 +99,27 @@ def questao_para_texto(questao, id):
     texto += f"C: {questao['opcoes']['C']}\n"
     texto += f"D: {questao['opcoes']['D']}"
     return texto
+
+# 2.7
+def gera_ajuda(questao):
+    erradas = []
+
+    for letra in questao["opcoes"]:
+        if letra != questao["correta"]:
+            erradas.append(questao["opcoes"][letra])
+
+    quantidade = random.randint(1, 2)
+
+    indice = random.randint(0, len(erradas) - 1)
+    resposta = erradas[indice]
+    erradas.pop(indice)
+
+    if quantidade == 2:
+        indice = random.randint(0, len(erradas) - 1)
+        resposta += " | " + erradas[indice]
+
+    texto = "DICA:\n"
+    texto += "Opções certamente erradas: "
+    texto += resposta
+
+    return texto
