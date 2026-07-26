@@ -1,4 +1,4 @@
-
+import random
 # 2.1
 def transforma_base(questoes):
     base_por_nivel = {}
@@ -71,3 +71,10 @@ def valida_questoes(questoes):
         return {}
     else:
         return lista_erros
+
+# 2.4
+def sorteia_questao(questoes, nivel):
+    lista = questoes[nivel]
+    indice = random.randint(0, len(lista) - 1)
+    
+    return lista[indice]
